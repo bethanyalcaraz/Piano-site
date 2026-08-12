@@ -1,6 +1,6 @@
 # Piano-site
 
-A simple placeholder website for private piano lessons in San Diego, CA.
+A simple placeholder website for New Song Worship Studio, offering worship-focused piano lessons in San Diego, CA.
 
 ## Pages
 
