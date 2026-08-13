@@ -4,9 +4,9 @@ A simple placeholder website for New Song Worship Studio, offering worship-focus
 
 ## Pages
 
-- `index.html` — landing page
-- `pricing.html` — lesson pricing and a payment placeholder (payment processing not yet connected)
-- `about.html` — about the teacher (placeholder bio)
+- `index.html` — single-page site: hero, what's included, packages/pricing,
+  a payment placeholder (payment processing not yet connected), and lesson
+  scheduling availability
 
 ## Running locally
 
