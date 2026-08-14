@@ -103,7 +103,14 @@
 
     <section id="about">
       <div class="container about-layout">
-        <div class="about-photo">Photo<br />Coming Soon</div>
+        <div class="about-photo">
+          <img
+            src="images/about.jpg"
+            alt="Bethany and her husband, Philip"
+            onerror="this.style.display='none'; this.parentElement.classList.add('photo-pending');"
+          />
+          <span class="photo-fallback">Photo<br />Coming Soon</span>
+        </div>
         <div class="about-text">
           <div class="eyebrow">About Me</div>
           <h2>Hi, I'm Bethany</h2>

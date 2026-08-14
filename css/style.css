@@ -529,6 +529,14 @@ section p.section-lead {
   border-radius: 50%;
 }
 
+.about-photo .photo-fallback {
+  display: none;
+}
+
+.about-photo.photo-pending .photo-fallback {
+  display: block;
+}
+
 .about-text h2 {
   margin-top: 4px;
 }
