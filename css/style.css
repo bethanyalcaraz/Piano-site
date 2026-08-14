@@ -439,6 +439,7 @@ section p.section-lead {
   color: var(--text);
 }
 
+.note-card,
 .sibling-note {
   background: var(--surface-alt);
   border: 1px solid var(--border);
@@ -447,6 +448,7 @@ section p.section-lead {
   margin-bottom: 24px;
 }
 
+.note-card h3,
 .sibling-note h3 {
   margin: 0 0 8px;
   font-family: var(--serif);
@@ -454,6 +456,7 @@ section p.section-lead {
   font-weight: 600;
 }
 
+.note-card p,
 .sibling-note p {
   margin: 0;
   color: var(--text-muted);
