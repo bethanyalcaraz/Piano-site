@@ -388,17 +388,10 @@ h3.section-subhead-spaced {
   color: var(--text-muted);
 }
 
-.price-card .per-session {
-  font-style: italic;
-  font-size: 0.85rem;
-  color: var(--accent-strong);
-  margin-bottom: 20px;
-}
-
 .price-card ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 24px;
+  margin: 20px 0 24px;
   flex-grow: 1;
 }
 
