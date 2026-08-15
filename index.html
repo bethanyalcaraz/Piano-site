@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/style.css" />
@@ -18,13 +18,13 @@
     <div class="nav-wrap">
       <a class="brand" href="#top">
         <svg class="brand-mark-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="29" fill="none" stroke="#a06cc4" stroke-width="3" />
-          <ellipse cx="26" cy="41" rx="8" ry="6" fill="#a06cc4" transform="rotate(-20 26 41)" />
-          <rect x="33" y="15" width="3.4" height="27" rx="1.7" fill="#a06cc4" />
+          <circle cx="32" cy="32" r="29" fill="none" stroke="#6f5a41" stroke-width="3" />
+          <ellipse cx="26" cy="41" rx="8" ry="6" fill="#6f5a41" transform="rotate(-20 26 41)" />
+          <rect x="33" y="15" width="3.4" height="27" rx="1.7" fill="#6f5a41" />
           <path
             d="M36.4,15 C47,17 49,26 40,32"
             fill="none"
-            stroke="#a06cc4"
+            stroke="#6f5a41"
             stroke-width="3.4"
             stroke-linecap="round"
           />
@@ -93,6 +93,27 @@
       </div>
     </section>
 
+    <section class="reveal welcome-block">
+      <div class="container welcome-grid">
+        <div class="photo-block">
+          <img
+            src="images/welcome.jpg"
+            alt="A vintage piano with sheet music open on the stand"
+            onerror="this.style.display='none'; this.parentElement.classList.add('photo-pending');"
+          />
+          <span class="photo-fallback">Photo Coming Soon</span>
+        </div>
+        <div>
+          <div class="eyebrow">Welcome</div>
+          <p>
+            New Song Worship Studio is a place to grow as a musician and
+            as a worshiper. Every lesson is built to help you play with
+            real skill &mdash; and lead with a heart set on Jesus.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <section id="launch" class="reveal">
       <div class="container">
         <div class="eyebrow">Start Here</div>
@@ -112,6 +133,15 @@
           <li>Develop a heart of worship through weekly devos that make connections between musical technique and scripture</li>
           <li>Grow in confidence, musicianship, and servant-hearted worship leading</li>
         </ul>
+
+        <div class="photo-strip">
+          <img
+            src="images/keys.jpg"
+            alt="Close-up of piano keys"
+            onerror="this.style.display='none'; this.parentElement.classList.add('photo-pending');"
+          />
+          <span class="photo-fallback">Photo Coming Soon</span>
+        </div>
 
         <h3 class="section-subhead section-subhead-spaced">Every Lesson Includes</h3>
         <div class="card-grid">
@@ -136,14 +166,6 @@
 
     <section id="about" class="reveal">
       <div class="container about-layout">
-        <div class="about-photo">
-          <img
-            src="images/about.jpg"
-            alt="Bethany and her husband, Philip"
-            onerror="this.style.display='none'; this.parentElement.classList.add('photo-pending');"
-          />
-          <span class="photo-fallback">Photo<br />Coming Soon</span>
-        </div>
         <div class="about-text">
           <div class="eyebrow">About Me</div>
           <h2>Hi, I'm Bethany</h2>
@@ -167,6 +189,14 @@
             then, I've continued offering private lessons for students
             interested in learning worship piano.
           </p>
+        </div>
+        <div class="about-photo photo-block">
+          <img
+            src="images/about.jpg"
+            alt="Bethany and her husband, Philip"
+            onerror="this.style.display='none'; this.parentElement.classList.add('photo-pending');"
+          />
+          <span class="photo-fallback">Photo<br />Coming Soon</span>
         </div>
       </div>
     </section>
