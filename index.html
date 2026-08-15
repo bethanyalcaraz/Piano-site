@@ -41,13 +41,18 @@
           <span class="brand-sub">Worship Studio</span>
         </span>
       </a>
-      <nav class="site-nav">
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
         <ul>
           <li><a href="#launch">Launch Program</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#packages">Packages</a></li>
           <li><a href="#schedule">Schedule</a></li>
-          <li><a href="heart-behind-new-song.html">The Heart Behind New Song</a></li>
+          <li><a href="heart-behind-new-song.html">The Heart</a></li>
         </ul>
       </nav>
     </div>
@@ -134,7 +139,7 @@
 
         <h3 class="section-subhead">What You'll Learn</h3>
         <ul class="objectives-list">
-          <li>Sit down and play worship music all on your own</li>
+          <li>Play and improvise worship music using number system theory</li>
           <li>Be introduced to the skill sets needed for playing with a worship team</li>
           <li>Play common worship piano chords and chord progressions confidently</li>
           <li>Play simple left-hand patterns and right-hand melodies together</li>
@@ -437,6 +442,28 @@
       <p>&copy; 2026 New Song Worship Studio &middot; Piano Lessons with a Heart for Discipleship &middot; Vista, CA</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById("nav-toggle");
+      var nav = document.getElementById("site-nav");
+      if (!toggle || !nav) return;
+
+      toggle.addEventListener("click", function () {
+        var isOpen = nav.classList.toggle("is-open");
+        toggle.classList.toggle("is-active", isOpen);
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          nav.classList.remove("is-open");
+          toggle.classList.remove("is-active");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+  </script>
 
   <script>
     (function () {
