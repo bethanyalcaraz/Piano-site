@@ -87,13 +87,9 @@ header.site-header {
 }
 
 .brand-text {
-  display: none;
+  display: flex;
   flex-direction: column;
   line-height: 1.25;
-}
-
-.brand.logo-fallback .brand-text {
-  display: flex;
 }
 
 .brand-mark {
@@ -110,7 +106,7 @@ header.site-header {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--logo-accent);
 }
 
 nav.site-nav ul {
