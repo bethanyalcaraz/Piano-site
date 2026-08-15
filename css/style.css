@@ -343,6 +343,16 @@ section h2 {
   margin: 0 0 14px;
 }
 
+p.program-tagline {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--logo-accent);
+  margin: 0 0 20px;
+}
+
 section p.section-lead {
   color: var(--text-muted);
   max-width: 560px;
@@ -820,6 +830,15 @@ h3.section-subhead-spaced {
   font-size: 1.05rem;
   color: var(--text);
   margin: 0 0 22px;
+}
+
+.devo-body p.litany {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--logo-accent);
+  margin: 32px 0;
 }
 
 .devo-prayer {
