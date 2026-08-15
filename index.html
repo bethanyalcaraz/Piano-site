@@ -366,7 +366,9 @@
         <div class="sibling-note">
           <h3>In-Home Lessons</h3>
           <p>
-            In-home lessons are available outside these times. Please
+            In-home lessons are available outside these times. In-home
+            lessons include an additional travel fee: $20 for two lessons,
+            $40 for four lessons, or $50 for the Launch Program. Please
             inquire with Bethany if you are interested in in-home lessons.
           </p>
         </div>
@@ -542,6 +544,18 @@
           opt.textContent = slot.day + " at " + slot.time;
           select.appendChild(opt);
         });
+
+        if (index === 0) {
+          var otherGroup = document.createElement("optgroup");
+          otherGroup.label = "Other Options";
+          ["Morning (flexible)", "Evening (flexible)", "In-Home Lesson"].forEach(function (label) {
+            var opt = document.createElement("option");
+            opt.value = label;
+            opt.textContent = label;
+            otherGroup.appendChild(opt);
+          });
+          select.appendChild(otherGroup);
+        }
       });
 
       var form = document.getElementById("booking-form");
