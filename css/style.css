@@ -720,6 +720,14 @@ h3.section-subhead-spaced {
   color: var(--text);
 }
 
+.slot.full {
+  background: transparent;
+  border-style: dashed;
+  color: var(--text-muted);
+  text-decoration: line-through;
+  opacity: 0.75;
+}
+
 .note-card,
 .sibling-note {
   background: var(--surface-alt);
@@ -742,6 +750,82 @@ h3.section-subhead-spaced {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+/* Booking form */
+
+.booking-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+}
+
+.booking-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field label {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+}
+
+.form-field textarea {
+  font-family: var(--serif);
+  resize: vertical;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: 2px solid var(--text);
+  outline-offset: 1px;
+}
+
+.booking-form .btn {
+  align-self: flex-start;
+}
+
+.form-note {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 4px 0 0;
 }
 
 /* About */
@@ -889,6 +973,11 @@ footer.site-footer {
 
   nav.site-nav ul {
     gap: 14px;
+  }
+
+  .form-row,
+  .form-row-3 {
+    grid-template-columns: 1fr;
   }
 }
 
