@@ -71,9 +71,11 @@ header.site-header {
 }
 
 .brand-mark-icon {
-  width: 30px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .brand-text {
