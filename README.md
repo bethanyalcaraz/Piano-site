@@ -1,12 +1,11 @@
 # Piano-site
 
-A simple placeholder website for New Song Worship Studio, offering piano lessons with a heart for discipleship in Vista, CA.
+The website for New Song Worship Studio, offering piano lessons with a heart for discipleship in Vista, CA.
 
 ## Pages
 
-- `index.html` — single-page site: hero, what's included, packages/pricing,
-  a payment placeholder (payment processing not yet connected), and lesson
-  scheduling availability
+- `index.html` — single-page site: hero, what's included, packages/pricing
+  with Stripe checkout, and lesson scheduling/booking requests
 
 ## Running locally
 
