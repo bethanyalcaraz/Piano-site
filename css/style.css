@@ -78,10 +78,22 @@ header.site-header {
   object-fit: cover;
 }
 
+.brand-logo-image {
+  height: 46px;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 .brand-text {
-  display: flex;
+  display: none;
   flex-direction: column;
   line-height: 1.25;
+}
+
+.brand.logo-fallback .brand-text {
+  display: flex;
 }
 
 .brand-mark {
