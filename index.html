@@ -12,6 +12,7 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/schedule-data.js"></script>
 </head>
 <body id="top">
   <header class="site-header">
@@ -350,22 +351,22 @@
             <h3>Mondays</h3>
             <div class="day-window">10:00 AM &ndash; 4:00 PM</div>
             <div class="slot-grid">
-              <span class="slot">10:00 AM</span>
-              <span class="slot">11:00 AM</span>
-              <span class="slot">12:00 PM</span>
-              <span class="slot">1:00 PM</span>
-              <span class="slot">2:00 PM</span>
-              <span class="slot">3:00 PM</span>
+              <span class="slot" data-slot-id="mon-10">10:00 AM</span>
+              <span class="slot" data-slot-id="mon-11">11:00 AM</span>
+              <span class="slot" data-slot-id="mon-12">12:00 PM</span>
+              <span class="slot" data-slot-id="mon-1">1:00 PM</span>
+              <span class="slot" data-slot-id="mon-2">2:00 PM</span>
+              <span class="slot" data-slot-id="mon-3">3:00 PM</span>
             </div>
           </div>
           <div class="day-card">
             <h3>Wednesdays</h3>
             <div class="day-window">1:00 PM &ndash; 5:30 PM</div>
             <div class="slot-grid">
-              <span class="slot">1:00 PM</span>
-              <span class="slot">2:00 PM</span>
-              <span class="slot">3:00 PM</span>
-              <span class="slot">4:00 PM</span>
+              <span class="slot" data-slot-id="wed-1">1:00 PM</span>
+              <span class="slot" data-slot-id="wed-2">2:00 PM</span>
+              <span class="slot" data-slot-id="wed-3">3:00 PM</span>
+              <span class="slot" data-slot-id="wed-4">4:00 PM</span>
             </div>
           </div>
         </div>
@@ -378,9 +379,66 @@
             let me know when booking.
           </p>
         </div>
-        <div class="payment-box">
-          <p>Online booking is coming soon &mdash; for now, reach out directly to reserve your day and time.</p>
-          <button class="btn disabled" disabled>Request a Time &mdash; Coming Soon</button>
+        <div class="booking-box">
+          <h3 class="section-subhead">Request a Lesson Time</h3>
+          <p class="section-lead" style="margin-bottom: 24px;">
+            Choose your package and up to three preferred times below.
+            This sends a request only &mdash; I'll follow up personally to
+            confirm your spot before anything is finalized. Times marked
+            &ldquo;Full&rdquo; above aren't available to select.
+          </p>
+          <form id="booking-form" class="booking-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="bf-name">Parent / Student Name</label>
+                <input type="text" id="bf-name" name="name" required />
+              </div>
+              <div class="form-field">
+                <label for="bf-email">Email</label>
+                <input type="email" id="bf-email" name="email" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="bf-phone">Phone (optional)</label>
+                <input type="tel" id="bf-phone" name="phone" />
+              </div>
+              <div class="form-field">
+                <label for="bf-package">Package</label>
+                <select id="bf-package" name="package" required>
+                  <option value="">Select a package&hellip;</option>
+                  <option value="Launch Program ($250, 6 lessons)">Launch Program ($250, 6 lessons)</option>
+                  <option value="2x Monthly Package ($85/mo)">2x Monthly Package ($85/mo)</option>
+                  <option value="4x Monthly Package ($160/mo)">4x Monthly Package ($160/mo)</option>
+                  <option value="A La Carte Session ($40)">A La Carte Session ($40)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row form-row-3">
+              <div class="form-field">
+                <label for="bf-time1">1st Choice</label>
+                <select id="bf-time1" name="time1" required></select>
+              </div>
+              <div class="form-field">
+                <label for="bf-time2">2nd Choice (optional)</label>
+                <select id="bf-time2" name="time2"></select>
+              </div>
+              <div class="form-field">
+                <label for="bf-time3">3rd Choice (optional)</label>
+                <select id="bf-time3" name="time3"></select>
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="bf-notes">Notes (optional)</label>
+              <textarea id="bf-notes" name="notes" rows="3" placeholder="Siblings, scheduling constraints, questions, etc."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Booking Request</button>
+            <p class="form-note">
+              This opens your email app with the request ready to send. If
+              it doesn't open, email the details directly to
+              <a href="mailto:mrsbethanyalcaraz@gmail.com">mrsbethanyalcaraz@gmail.com</a>.
+            </p>
+          </form>
         </div>
       </div>
     </section>
@@ -420,6 +478,84 @@
 
       targets.forEach(function (el) {
         observer.observe(el);
+      });
+    })();
+  </script>
+
+  <script>
+    (function () {
+      var data = window.SCHEDULE_DATA;
+      if (!data) return;
+
+      var openSlots = data.slots.filter(function (slot) {
+        return slot.booked < data.capacity;
+      });
+
+      data.slots.forEach(function (slot) {
+        var chip = document.querySelector('.slot[data-slot-id="' + slot.id + '"]');
+        if (!chip) return;
+        if (slot.booked >= data.capacity) {
+          chip.classList.add("full");
+          chip.textContent = chip.textContent + " — Full";
+        }
+      });
+
+      var timeSelects = [
+        document.getElementById("bf-time1"),
+        document.getElementById("bf-time2"),
+        document.getElementById("bf-time3")
+      ];
+
+      timeSelects.forEach(function (select, index) {
+        if (!select) return;
+        var placeholder = document.createElement("option");
+        placeholder.value = "";
+        placeholder.textContent =
+          index === 0 ? "Select a time…" : "Select a time (optional)…";
+        select.appendChild(placeholder);
+
+        openSlots.forEach(function (slot) {
+          var opt = document.createElement("option");
+          opt.value = slot.day + " at " + slot.time;
+          opt.textContent = slot.day + " at " + slot.time;
+          select.appendChild(opt);
+        });
+      });
+
+      var form = document.getElementById("booking-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var name = form.name.value.trim();
+        var email = form.email.value.trim();
+        var phone = form.phone.value.trim();
+        var pkg = form.package.value;
+        var t1 = form.time1.value;
+        var t2 = form.time2.value;
+        var t3 = form.time3.value;
+        var notes = form.notes.value.trim();
+
+        var lines = [
+          "Name: " + name,
+          "Email: " + email,
+          "Phone: " + (phone || "—"),
+          "Package: " + pkg,
+          "1st choice: " + (t1 || "—"),
+          "2nd choice: " + (t2 || "—"),
+          "3rd choice: " + (t3 || "—"),
+          "Notes: " + (notes || "—")
+        ];
+
+        var subject = "Lesson Booking Request — " + name;
+        var body = lines.join("\n");
+        var mailto =
+          "mailto:mrsbethanyalcaraz@gmail.com" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
+
+        window.location.href = mailto;
       });
     })();
   </script>
