@@ -227,6 +227,14 @@ nav.site-nav a:hover {
   animation: fade-up 0.8s ease 0.15s both;
 }
 
+.hero-logo-image {
+  display: block;
+  height: 72px;
+  width: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
 .hero h1 {
   font-family: var(--serif);
   font-weight: 500;
