@@ -654,22 +654,6 @@ h3.section-subhead-spaced {
   margin-top: 30px;
 }
 
-/* Payment placeholder */
-
-.payment-box {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 32px;
-  max-width: 480px;
-}
-
-.payment-box p {
-  color: var(--text-muted);
-  margin-top: 0;
-}
-
 /* Schedule */
 
 .schedule-grid {
@@ -750,6 +734,10 @@ h3.section-subhead-spaced {
   margin: 0;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+.note-card .btn {
+  margin-top: 18px;
 }
 
 /* Booking form */
