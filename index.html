@@ -26,6 +26,19 @@
 
   <main>
     <section class="hero" style="border-top: none;">
+      <div class="hero-decor" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <svg class="staff-lines" viewBox="0 0 600 220" preserveAspectRatio="none">
+          <g stroke="currentColor" stroke-width="1.5" fill="none">
+            <line x1="0" y1="24" x2="600" y2="0" />
+            <line x1="0" y1="62" x2="600" y2="38" />
+            <line x1="0" y1="100" x2="600" y2="76" />
+            <line x1="0" y1="138" x2="600" y2="114" />
+            <line x1="0" y1="176" x2="600" y2="152" />
+          </g>
+        </svg>
+      </div>
       <div class="container hero-grid">
         <div>
           <span class="pill">Vista, California</span>
@@ -59,7 +72,7 @@
       </div>
     </section>
 
-    <section id="launch">
+    <section id="launch" class="reveal">
       <div class="container">
         <div class="eyebrow">Start Here</div>
         <h2>The Launch Program</h2>
@@ -100,7 +113,7 @@
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="reveal">
       <div class="container about-layout">
         <div class="about-photo">
           <img
@@ -137,7 +150,7 @@
       </div>
     </section>
 
-    <section id="packages">
+    <section id="packages" class="reveal">
       <div class="container">
         <div class="eyebrow">Pricing</div>
         <h2>Choose Your Package</h2>
@@ -224,7 +237,7 @@
       </div>
     </section>
 
-    <section id="payment">
+    <section id="payment" class="reveal">
       <div class="container">
         <div class="eyebrow">Payment</div>
         <h2>Booking &amp; Payment</h2>
@@ -239,7 +252,7 @@
       </div>
     </section>
 
-    <section id="schedule">
+    <section id="schedule" class="reveal">
       <div class="container">
         <div class="eyebrow">Availability</div>
         <h2>Book Your Lesson Time</h2>
@@ -293,5 +306,37 @@
       <p>&copy; 2026 New Song Worship Studio &middot; Piano Lessons with a Heart for Discipleship &middot; Vista, CA &middot; Placeholder site, more details coming soon.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var targets = document.querySelectorAll(".reveal");
+      var reduceMotion =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!("IntersectionObserver" in window) || reduceMotion) {
+        targets.forEach(function (el) {
+          el.classList.add("is-visible");
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      targets.forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
 </body>
 </html>
