@@ -1,6 +1,6 @@
 # Piano-site
 
-A simple placeholder website for New Song Worship Studio, offering piano lessons with a heart for discipleship in San Diego, CA.
+A simple placeholder website for New Song Worship Studio, offering piano lessons with a heart for discipleship in Vista, CA.
 
 ## Pages
 
