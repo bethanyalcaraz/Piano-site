@@ -99,7 +99,7 @@
             <span class="fact-value">45 min</span>
           </div>
           <div class="fact-row">
-            <span class="fact-label">Lesson days</span>
+            <span class="fact-label">Lesson Day Availability</span>
             <span class="fact-value">Mon &amp; Wed</span>
           </div>
           <div class="fact-row">
@@ -545,7 +545,7 @@
           select.appendChild(opt);
         });
 
-        if (index === 0) {
+        if (index === 0 || index === 1) {
           var otherGroup = document.createElement("optgroup");
           otherGroup.label = "Other Options";
           ["Morning (flexible)", "Evening (flexible)", "In-Home Lesson"].forEach(function (label) {
