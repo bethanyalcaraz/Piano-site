@@ -798,10 +798,6 @@ h3.section-subhead-spaced {
   gap: 18px;
 }
 
-.form-row-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .form-field {
   display: flex;
   flex-direction: column;
@@ -1020,8 +1016,7 @@ footer.site-footer {
     opacity: 1;
   }
 
-  .form-row,
-  .form-row-3 {
+  .form-row {
     grid-template-columns: 1fr;
   }
 }
