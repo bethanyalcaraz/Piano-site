@@ -384,7 +384,7 @@
         <div class="booking-box">
           <h3 class="section-subhead">Request a Lesson Time</h3>
           <p class="section-lead" style="margin-bottom: 24px;">
-            Choose your package and up to three preferred times below.
+            Choose your package and up to two preferred times below.
             This sends a request only &mdash; I'll follow up personally to
             confirm your spot before anything is finalized. Times marked
             &ldquo;Full&rdquo; above aren't available to select.
@@ -416,7 +416,7 @@
                 </select>
               </div>
             </div>
-            <div class="form-row form-row-3">
+            <div class="form-row">
               <div class="form-field">
                 <label for="bf-time1">1st Choice</label>
                 <select id="bf-time1" name="time1" required></select>
@@ -424,10 +424,6 @@
               <div class="form-field">
                 <label for="bf-time2">2nd Choice (optional)</label>
                 <select id="bf-time2" name="time2"></select>
-              </div>
-              <div class="form-field">
-                <label for="bf-time3">3rd Choice (optional)</label>
-                <select id="bf-time3" name="time3"></select>
               </div>
             </div>
             <div class="form-field">
@@ -526,8 +522,7 @@
 
       var timeSelects = [
         document.getElementById("bf-time1"),
-        document.getElementById("bf-time2"),
-        document.getElementById("bf-time3")
+        document.getElementById("bf-time2")
       ];
 
       timeSelects.forEach(function (select, index) {
@@ -545,17 +540,15 @@
           select.appendChild(opt);
         });
 
-        if (index === 0 || index === 1) {
-          var otherGroup = document.createElement("optgroup");
-          otherGroup.label = "Other Options";
-          ["Morning (flexible)", "Evening (flexible)", "In-Home Lesson"].forEach(function (label) {
-            var opt = document.createElement("option");
-            opt.value = label;
-            opt.textContent = label;
-            otherGroup.appendChild(opt);
-          });
-          select.appendChild(otherGroup);
-        }
+        var otherGroup = document.createElement("optgroup");
+        otherGroup.label = "Other Options";
+        ["Morning (flexible)", "Evening (flexible)", "In-Home Lesson"].forEach(function (label) {
+          var opt = document.createElement("option");
+          opt.value = label;
+          opt.textContent = label;
+          otherGroup.appendChild(opt);
+        });
+        select.appendChild(otherGroup);
       });
 
       var form = document.getElementById("booking-form");
@@ -570,7 +563,6 @@
         var pkg = form.package.value;
         var t1 = form.time1.value;
         var t2 = form.time2.value;
-        var t3 = form.time3.value;
         var notes = form.notes.value.trim();
 
         var lines = [
@@ -580,7 +572,6 @@
           "Package: " + pkg,
           "1st choice: " + (t1 || "—"),
           "2nd choice: " + (t2 || "—"),
-          "3rd choice: " + (t3 || "—"),
           "Notes: " + (notes || "—")
         ];
 
