@@ -39,7 +39,7 @@
 window.SCHEDULE_DATA = {
   capacity: 4,
   slots: [
-    { id: "mon-10", day: "Monday", time: "10:00 AM", booked: 0 },
+    { id: "mon-10", day: "Monday", time: "10:00 AM", booked: 2 },
     { id: "mon-11", day: "Monday", time: "11:00 AM", booked: 4 },
     { id: "mon-12", day: "Monday", time: "12:00 PM", booked: 0 },
     { id: "mon-1", day: "Monday", time: "1:00 PM", booked: 0 },
