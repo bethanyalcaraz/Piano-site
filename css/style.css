@@ -566,16 +566,9 @@ h3.section-subhead-spaced {
   padding: 28px 26px;
 }
 
-.card .num {
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
 .card h3 {
   font-family: var(--serif);
-  margin: 10px 0 8px;
+  margin: 0 0 8px;
   font-size: 1.2rem;
   font-weight: 600;
 }
