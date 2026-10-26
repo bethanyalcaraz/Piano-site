@@ -147,7 +147,7 @@
             <div class="num">I.</div>
             <h3>A Devo to Start</h3>
             <p>Grounding your playing in scripture, each lesson opens with a short devotional before you touch the keys.</p>
-            <a class="card-link" href="sample-devo.html">Read a Sample Devo &rarr;</a>
+            <a class="btn btn-secondary card-btn" href="sample-devo.html">Read a Sample Devo</a>
           </div>
           <div class="card">
             <div class="num">II.</div>
@@ -160,6 +160,20 @@
             <p>Build a growing personal songbook of chords and resources you keep and use long after the lesson ends.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="heart" class="reveal">
+      <div class="container">
+        <div class="eyebrow">The Heart</div>
+        <h2>The Heart Behind New Song</h2>
+        <p class="section-lead">
+          Why &ldquo;New Song&rdquo;? It traces back to a word that shows
+          up again and again in Scripture &mdash; new heart, new spirit,
+          new creation, new song. Read the story behind the name and the
+          heart behind this ministry.
+        </p>
+        <a class="btn btn-secondary" href="heart-behind-new-song.html">Read the Full Story</a>
       </div>
     </section>
 
@@ -290,15 +304,6 @@
           </div>
         </div>
         <div class="sibling-note">
-          <h3>In-Home Lessons</h3>
-          <p>
-            In-home lessons are available outside these times. In-home
-            lessons include an additional travel fee: $20 for two lessons,
-            $40 for four lessons, or $50 for the Launch Program. Please
-            inquire with Bethany if you are interested in in-home lessons.
-          </p>
-        </div>
-        <div class="sibling-note">
           <h3>Scheduling Siblings</h3>
           <p>
             Have more than one child taking lessons? Sibling lessons can be
@@ -310,7 +315,7 @@
         <div class="booking-box">
           <h3 class="section-subhead">Request a Lesson Time</h3>
           <p class="section-lead" style="margin-bottom: 24px;">
-            Choose your package and up to two preferred times below.
+            Choose up to two preferred times below.
             This sends a request only &mdash; I'll follow up personally to
             confirm your spot before anything is finalized. Times marked
             &ldquo;Full&rdquo; above aren't available to select.
@@ -326,18 +331,9 @@
                 <input type="email" id="bf-email" name="email" required />
               </div>
             </div>
-            <div class="form-row">
-              <div class="form-field">
-                <label for="bf-phone">Phone (optional)</label>
-                <input type="tel" id="bf-phone" name="phone" />
-              </div>
-              <div class="form-field">
-                <label for="bf-package">Package</label>
-                <select id="bf-package" name="package" required>
-                  <option value="">Select a package&hellip;</option>
-                  <option value="Launch Program ($250, 6 lessons)">Launch Program ($250, 6 lessons)</option>
-                </select>
-              </div>
+            <div class="form-field">
+              <label for="bf-phone">Phone (optional)</label>
+              <input type="tel" id="bf-phone" name="phone" />
             </div>
             <div class="form-row">
               <div class="form-field">
@@ -483,7 +479,6 @@
         var name = form.name.value.trim();
         var email = form.email.value.trim();
         var phone = form.phone.value.trim();
-        var pkg = form.package.value;
         var t1 = form.time1.value;
         var t2 = form.time2.value;
         var notes = form.notes.value.trim();
@@ -492,7 +487,7 @@
           "Name: " + name,
           "Email: " + email,
           "Phone: " + (phone || "—"),
-          "Package: " + pkg,
+          "Package: Launch Program ($250, 6 lessons)",
           "1st choice: " + (t1 || "—"),
           "2nd choice: " + (t2 || "—"),
           "Notes: " + (notes || "—")
