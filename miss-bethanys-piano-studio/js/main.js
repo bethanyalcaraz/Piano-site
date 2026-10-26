@@ -77,6 +77,7 @@
         "Email: " + form.email.value.trim(),
         "Phone: " + (form.phone.value.trim() || "—"),
         "Lesson length: " + form.package.value,
+        "Preferred day: " + form.day.value,
         "Student age & experience: " + (form.age.value.trim() || "—"),
         "Notes: " + (form.notes.value.trim() || "—")
       ];

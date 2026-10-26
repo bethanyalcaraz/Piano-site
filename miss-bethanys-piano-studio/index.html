@@ -339,9 +339,17 @@
               <input type="text" id="ef-age" name="age" placeholder="e.g. 8, complete beginner" />
             </div>
           </div>
+          <fieldset class="field">
+            <legend>Preferred Day of the Week</legend>
+            <div class="choices">
+              <label><input type="radio" name="day" value="Monday" required /><span>Monday</span></label>
+              <label><input type="radio" name="day" value="Wednesday" /><span>Wednesday</span></label>
+              <label><input type="radio" name="day" value="Friday" /><span>Friday</span></label>
+            </div>
+          </fieldset>
           <div class="field">
             <label for="ef-notes">Notes (optional)</label>
-            <textarea id="ef-notes" name="notes" rows="3" placeholder="Preferred days/times, siblings, questions&hellip;"></textarea>
+            <textarea id="ef-notes" name="notes" rows="3" placeholder="Preferred times, siblings, questions&hellip;"></textarea>
           </div>
           <button type="submit" class="btn btn-solid">Send Request</button>
           <p class="fine-print">

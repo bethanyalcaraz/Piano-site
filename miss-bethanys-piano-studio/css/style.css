@@ -619,6 +619,8 @@ h1 em, h2 em { color: var(--accent); }
 .enroll-form .btn,
 .intake-form .btn { align-self: flex-start; }
 
+.field legend { padding: 0; margin-bottom: 8px; }
+
 fieldset.field {
   border: 0;
   margin: 0;
