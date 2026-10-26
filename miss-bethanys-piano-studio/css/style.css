@@ -420,6 +420,8 @@ h1 em, h2 em { color: var(--accent); }
   align-items: baseline;
 }
 
+.fee-row + .fee-row { margin-top: -1px; }
+
 .fee-row .label { margin: 0; color: var(--accent-ink); }
 .fee-row p:last-child { margin: 0; }
 
@@ -657,6 +659,7 @@ fieldset.field {
   transition: background 0.2s, color 0.2s;
 }
 
+.choices input:disabled + span { opacity: 0.3; cursor: not-allowed; }
 .choices input:checked + span { background: var(--ink); color: #fff; }
 .choices input:focus-visible + span { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
 

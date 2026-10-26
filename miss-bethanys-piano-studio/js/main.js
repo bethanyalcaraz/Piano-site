@@ -69,6 +69,17 @@
   // Enrollment request -> mailto
   var form = document.getElementById("enroll-form");
   if (form) {
+    // In-home lessons are Fridays only
+    form.querySelectorAll('input[name="location"]').forEach(function (radio) {
+      radio.addEventListener("change", function () {
+        var inHome = form.location.value.indexOf("In-home") === 0;
+        form.querySelectorAll('input[name="day"]').forEach(function (day) {
+          day.disabled = inHome && day.value !== "Friday";
+          if (inHome) day.checked = day.value === "Friday";
+        });
+      });
+    });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var name = form.name.value.trim();
@@ -77,6 +88,7 @@
         "Email: " + form.email.value.trim(),
         "Phone: " + (form.phone.value.trim() || "—"),
         "Lesson length: " + form.package.value,
+        "Location: " + form.location.value,
         "Preferred day: " + form.day.value,
         "Student age & experience: " + (form.age.value.trim() || "—"),
         "Notes: " + (form.notes.value.trim() || "—")
