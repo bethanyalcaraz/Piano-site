@@ -21,26 +21,14 @@
   var grid = document.getElementById("shop-grid");
   var items = window.CURRICULUM || [];
   if (grid) {
-    items.forEach(function (item, i) {
+    items.forEach(function (item) {
       var card = document.createElement("article");
       card.className = "shop-card";
 
-      var cover = document.createElement("div");
-      cover.className = "shop-cover";
-      if (item.image) {
-        var img = document.createElement("img");
-        img.src = item.image;
-        img.alt = item.title;
-        cover.appendChild(img);
-      } else {
-        cover.textContent = String(i + 1).padStart(2, "0");
-      }
-      card.appendChild(cover);
-
-      var level = document.createElement("p");
-      level.className = "label";
-      level.textContent = item.level;
-      card.appendChild(level);
+      var series = document.createElement("p");
+      series.className = "label";
+      series.textContent = item.series;
+      card.appendChild(series);
 
       var title = document.createElement("h3");
       title.textContent = item.title;

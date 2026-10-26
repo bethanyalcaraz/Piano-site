@@ -462,40 +462,21 @@ h1 em, h2 em { color: var(--accent); }
 
 .shop-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 32px;
 }
 
 .shop-card {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-top: 1px solid var(--ink);
+  padding: 24px 0 48px;
 }
 
-.shop-cover {
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  margin-bottom: 20px;
-  border: 1px solid var(--ink);
-  background: var(--soft);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-style: italic;
-  font-size: 64px;
-  color: #c9c6c0;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
+.shop-card .label { margin-bottom: 8px; color: var(--accent-ink); }
 
-.shop-cover img { width: 100%; height: 100%; object-fit: cover; }
-
-.shop-card:hover .shop-cover { transform: translateY(-4px); }
-
-.shop-card .label { margin-bottom: 6px; color: var(--accent-ink); }
-
-.shop-card h3 { font-size: 26px; margin-bottom: 8px; }
+.shop-card h3 { font-size: 30px; margin-bottom: 10px; }
 
 .shop-desc {
   font-size: 14px;
@@ -773,13 +754,13 @@ fieldset.field {
 
   .price-card { padding: 28px; }
   .fee-row { grid-template-columns: 1fr; gap: 8px; padding: 24px 28px; }
-  .shop-grid { gap: 32px 16px; }
-  .shop-card h3 { font-size: 22px; }
+  .shop-grid { grid-template-columns: 1fr; }
+  .shop-card { padding-bottom: 36px; }
+  .shop-card h3 { font-size: 26px; }
 }
 
 @media (max-width: 420px) {
   .container, .nav-wrap { padding-left: 16px; padding-right: 16px; }
-  .shop-grid { grid-template-columns: 1fr; }
   .brand-sub { display: none; }
 }
 
