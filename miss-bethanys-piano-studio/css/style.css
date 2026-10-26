@@ -5,7 +5,8 @@
   --line: #0e0e0e;
   --hair: #e6e6e6;
   --soft: #f6f5f3;
-  --accent: #8a1c2b;
+  --accent: #9fb2c5;
+  --accent-ink: #62778b;
   --serif: "Instrument Serif", "Times New Roman", Georgia, serif;
   --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -173,7 +174,7 @@ h1 em, h2 em { color: var(--accent); }
 }
 
 .btn-solid { background: var(--ink); color: #fff; }
-.btn-solid:hover { background: var(--accent); border-color: var(--accent); }
+.btn-solid:hover { background: var(--accent-ink); border-color: var(--accent-ink); }
 .btn-line { background: transparent; color: var(--ink); }
 .btn-line:hover { background: var(--ink); color: #fff; }
 .btn-invert { background: #fff; color: var(--ink); border-color: #fff; }
@@ -333,7 +334,7 @@ h1 em, h2 em { color: var(--accent); }
   font-family: var(--serif);
   font-style: italic;
   font-size: 22px;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .feature:hover .feature-num { color: #fff; }
@@ -418,7 +419,7 @@ h1 em, h2 em { color: var(--accent); }
   align-items: baseline;
 }
 
-.fee-row .label { margin: 0; color: var(--accent); }
+.fee-row .label { margin: 0; color: var(--accent-ink); }
 .fee-row p:last-child { margin: 0; }
 
 /* Curriculum shop */
@@ -456,7 +457,7 @@ h1 em, h2 em { color: var(--accent); }
 
 .shop-card:hover .shop-cover { transform: translateY(-4px); }
 
-.shop-card .label { margin-bottom: 6px; color: var(--accent); }
+.shop-card .label { margin-bottom: 6px; color: var(--accent-ink); }
 
 .shop-card h3 { font-size: 26px; margin-bottom: 8px; }
 
@@ -482,6 +483,52 @@ h1 em, h2 em { color: var(--accent); }
   margin: 20px 0 0;
   font-size: 12px;
   color: var(--muted);
+}
+
+/* Worship studio */
+
+.section-dark { background: var(--ink); color: #fff; }
+.section-dark .index { border-bottom-color: #fff; }
+.section-dark .section-lead { color: #b5b5b5; }
+.section-dark h2 em { color: #c9d6e2; }
+
+.worship-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.worship-copy p {
+  margin: 0 0 32px;
+  font-size: 17px;
+  color: #d6d6d6;
+  max-width: 480px;
+}
+
+.worship-card {
+  background: #fff;
+  color: var(--ink);
+  padding: 40px;
+}
+
+.worship-card .label { color: var(--accent-ink); }
+.worship-card h3 { font-size: 40px; }
+
+.worship-tagline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  margin: 4px 0 24px;
+  color: var(--muted);
+}
+
+.worship-card ul { list-style: none; padding: 0; margin: 0 0 32px; }
+
+.worship-card li {
+  padding: 12px 0;
+  border-top: 1px solid var(--hair);
+  font-size: 15px;
 }
 
 /* Forms */
@@ -539,8 +586,8 @@ h1 em, h2 em { color: var(--accent); }
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 1px 0 var(--accent);
+  border-color: var(--accent-ink);
+  box-shadow: 0 1px 0 var(--accent-ink);
 }
 
 .enroll-form .btn,
@@ -583,7 +630,7 @@ fieldset.field {
 }
 
 .choices input:checked + span { background: var(--ink); color: #fff; }
-.choices input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: 2px; }
+.choices input:focus-visible + span { outline: 2px solid var(--accent-ink); outline-offset: 2px; }
 
 .form-block {
   border-top: 1px solid var(--ink);
@@ -673,7 +720,12 @@ fieldset.field {
 
   .feature-grid,
   .price-grid,
+  .worship-grid,
   .field-row { grid-template-columns: 1fr; }
+
+  .worship-grid { gap: 40px; }
+  .worship-card { padding: 28px; }
+  .worship-card .btn { width: 100%; }
 
   .price-card { padding: 28px; }
   .fee-row { grid-template-columns: 1fr; gap: 8px; padding: 24px 28px; }
