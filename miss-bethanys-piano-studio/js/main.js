@@ -57,7 +57,7 @@
         link.href = item.url;
         link.target = "_blank";
         link.rel = "noopener noreferrer sponsored";
-        link.textContent = "Buy on Amazon ↗";
+        link.textContent = "Shop on Amazon ↗";
         card.appendChild(link);
       } else {
         var soon = document.createElement("span");
