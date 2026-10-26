@@ -422,6 +422,42 @@ h1 em, h2 em { color: var(--accent); }
 .fee-row .label { margin: 0; color: var(--accent-ink); }
 .fee-row p:last-child { margin: 0; }
 
+.policy-head {
+  font-size: clamp(32px, 4vw, 44px);
+  margin: 72px 0 28px;
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--ink);
+}
+
+.policy {
+  padding: 28px 28px 8px 0;
+}
+
+.policy + .policy {
+  padding-left: 28px;
+  border-left: 1px solid var(--hair);
+}
+
+.policy .feature-num { font-size: 20px; }
+
+.policy h4 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.1;
+  margin: 20px 0 10px;
+}
+
+.policy p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+
 /* Curriculum shop */
 
 .shop-grid {
@@ -682,6 +718,9 @@ fieldset.field {
 
 @media (max-width: 960px) {
   .feature-grid { grid-template-columns: repeat(2, 1fr); }
+  .policy-grid { grid-template-columns: repeat(2, 1fr); }
+  .policy:nth-child(3) { padding-left: 0; border-left: 0; }
+  .policy:nth-child(n+3) { border-top: 1px solid var(--hair); }
   .shop-grid { grid-template-columns: repeat(2, 1fr); }
   .split { grid-template-columns: 1fr; gap: 0; }
   .split .section-head { position: static; }
@@ -724,6 +763,11 @@ fieldset.field {
   .field-row { grid-template-columns: 1fr; }
 
   .worship-grid { gap: 40px; }
+  .policy-grid { grid-template-columns: 1fr; }
+  .policy,
+  .policy + .policy { padding: 24px 0; border-left: 0; }
+  .policy + .policy { border-top: 1px solid var(--hair); }
+  .policy-head { margin-top: 56px; }
   .worship-card { padding: 28px; }
   .worship-card .btn { width: 100%; }
 
