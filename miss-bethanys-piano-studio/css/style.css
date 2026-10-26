@@ -559,6 +559,24 @@ h1 em, h2 em { color: var(--accent); }
   font-size: 15px;
 }
 
+.teaser {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.teaser .section-head { margin-bottom: 0; }
+
+.worship-copy .label { color: #c9d6e2; }
+
+.feature-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+.worship-next h2 { font-size: clamp(40px, 5vw, 64px); }
+
+.site-nav a[aria-current="page"]::after { right: 0; }
+
 /* Forms */
 
 .contact-line { margin-top: 24px; font-size: 15px; }
