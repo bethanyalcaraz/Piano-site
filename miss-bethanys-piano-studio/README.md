@@ -1,0 +1,11 @@
+# Miss Bethany's Piano Studio
+
+Classical piano lessons in Vista, CA. Static site, no build step: open
+`index.html` in a browser or run `python3 -m http.server` in this folder.
+
+- `index.html` — about, lessons, tuition, curriculum shop, contact
+- `intake.html` — new student intake form (opens an email with the answers)
+- `js/curriculum.js` — curriculum shop items; paste Amazon links into `url`
+
+This folder is self-contained, so it can be moved into its own repository
+or hosted on its own domain.

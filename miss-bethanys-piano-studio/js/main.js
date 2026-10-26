@@ -1,0 +1,101 @@
+(function () {
+  // Mobile nav
+  var toggle = document.getElementById("nav-toggle");
+  var nav = document.getElementById("site-nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      var isOpen = nav.classList.toggle("is-open");
+      toggle.classList.toggle("is-active", isOpen);
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("is-open");
+        toggle.classList.remove("is-active");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  // Curriculum shop
+  var grid = document.getElementById("shop-grid");
+  var items = window.CURRICULUM || [];
+  if (grid) {
+    items.forEach(function (item, i) {
+      var card = document.createElement("article");
+      card.className = "shop-card";
+
+      var cover = document.createElement("div");
+      cover.className = "shop-cover";
+      if (item.image) {
+        var img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.title;
+        cover.appendChild(img);
+      } else {
+        cover.textContent = String(i + 1).padStart(2, "0");
+      }
+      card.appendChild(cover);
+
+      var level = document.createElement("p");
+      level.className = "label";
+      level.textContent = item.level;
+      card.appendChild(level);
+
+      var title = document.createElement("h3");
+      title.textContent = item.title;
+      card.appendChild(title);
+
+      var desc = document.createElement("p");
+      desc.className = "shop-desc";
+      desc.textContent = item.description;
+      card.appendChild(desc);
+
+      if (item.url) {
+        var link = document.createElement("a");
+        link.className = "btn btn-line btn-small";
+        link.href = item.url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer sponsored";
+        link.textContent = "Buy on Amazon ↗";
+        card.appendChild(link);
+      } else {
+        var soon = document.createElement("span");
+        soon.className = "soon";
+        soon.textContent = "Link Coming Soon";
+        card.appendChild(soon);
+      }
+
+      grid.appendChild(card);
+    });
+  }
+
+  // Tuition buttons preselect the lesson length in the form
+  var pkgSelect = document.getElementById("ef-package");
+  document.querySelectorAll("[data-package]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (pkgSelect) pkgSelect.value = btn.getAttribute("data-package");
+    });
+  });
+
+  // Enrollment request -> mailto
+  var form = document.getElementById("enroll-form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = form.name.value.trim();
+      var lines = [
+        "Name: " + name,
+        "Email: " + form.email.value.trim(),
+        "Phone: " + (form.phone.value.trim() || "—"),
+        "Lesson length: " + form.package.value,
+        "Student age & experience: " + (form.age.value.trim() || "—"),
+        "Notes: " + (form.notes.value.trim() || "—")
+      ];
+      window.location.href =
+        "mailto:mrsbethanyalcaraz@gmail.com" +
+        "?subject=" + encodeURIComponent("Piano Lesson Request — " + name) +
+        "&body=" + encodeURIComponent(lines.join("\n"));
+    });
+  }
+})();
