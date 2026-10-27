@@ -345,6 +345,13 @@ section h2 {
   margin: 0 0 14px;
 }
 
+.hero h1 em,
+section h2 em,
+.devo-page h1 em {
+  font-style: italic;
+  color: var(--logo-accent);
+}
+
 p.program-tagline {
   font-family: var(--sans);
   font-weight: 700;
